@@ -24,3 +24,21 @@ form.addEventListener("submit", async (e) => {
   }
 });
 
+async function transformText(text, persona) {
+  var response = await fetch("   ?????????? API ????????     ", 
+{   method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model: "  ???????  API ??????   ",
+      messages: [
+        {
+          role: "user",
+          content: `Rewrite the following text in the style of a ${persona}. Only return the rewritten text, nothing else.\n\n"${text}"`
+        }
+      ]
+    })
+  });
+
+  const data = await response.json();
+  return data.content[0].text;
+}
