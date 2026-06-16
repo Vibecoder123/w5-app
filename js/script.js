@@ -17,7 +17,23 @@ form.addEventListener("submit", async (e) => {
 
   try {
     const transformed = await transformText(userText, persona);
-    resultPanel.innerHTML = `<p>${transformed}</p>`;
+    resultPanel.innerHTML = `
+    <p>${transformed}</p>
+
+
+    // Copy and Past Section NOT TESTED: 
+        <button id="copy-btn">Copy to Clipboard</button>`;
+        document.getElementById("copy-btn").addEventListener("click", () => { navigator.clipboard.writeText(transformed) .then(() => {
+        document.getElementById("copy-btn").textContent = "Copied!";
+        setTimeout(() => { document.getElementById("copy-btn").textContent = "Copy to Clipboard"; }, 2000);
+        })
+        .catch(() => {
+        resultPanel.innerHTML += "<p>Failed to copy. Please copy manually.</p>";
+       });
+        });
+    // Copy and Past Section NOT TESTED: 
+
+
   } catch (error) {
     resultPanel.innerHTML = "<p>Something went wrong. Please try again.</p>";
     console.error(error);
@@ -25,7 +41,7 @@ form.addEventListener("submit", async (e) => {
 });
 
 async function transformText(text, persona) {
-  var response = await fetch("   ?????????? API ????????     ", 
+  var response = await fetch("   ???????? API ????????     ", 
 {   method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -42,3 +58,8 @@ async function transformText(text, persona) {
   const data = await response.json();
   return data.content[0].text;
 }
+
+
+
+
+
