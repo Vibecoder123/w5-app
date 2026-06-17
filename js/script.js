@@ -45,32 +45,22 @@ form.addEventListener("submit", async (e) => {
 //////API SECTION 
 
 async function transformText(text, persona) {
-  var response = await fetch("?????????https://api.openai.com/v1/chat/completions?????????", {
+  var response = await fetch("https://w5-collab-app.olliecatt123.workers.dev/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "?????????YOUR_OPENAI_API_KEY???????"
     },
-    body: JSON.stringify({
-      model: "gpt-4o-mini", // ????????????
-      messages: [
-        {
-          role: "user",
-          content: `Rewrite the following text in the style of a ${persona}. Only return the rewritten text, nothing else.\n\n"${text}"`
-        }]
-    })
-  });
+    body: JSON.stringify({ text, persona})
+});
 
   const data = await response.json();
-  return data.choices[0].message.content; // ← different shape than Claude
+
+  if (data.error) {
+    throw new Error(data.error);
+  }
+
+  return data.result;
 }
-
-
-
-
-
-
-
 
 
 
