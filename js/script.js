@@ -62,4 +62,23 @@ async function transformText(text, persona) {
 
 
 
+// Shake Effect ///
+const button = document.getElementById("shakeBtn");
+const image = document.getElementById("myImage");
 
+button.addEventListener("click", () => {
+// Restart the animation if clicked repeatedly
+image.classList.remove("shake");
+
+requestAnimationFrame(() => {
+image.classList.add("shake");
+});
+
+image.addEventListener(
+"animationend",
+() => {
+image.classList.remove("shake");
+},
+{ once: true }
+);
+});
