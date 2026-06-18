@@ -30,7 +30,7 @@ form.addEventListener("submit", async (e) => {
         resultPanel.innerHTML += "<p>Failed to copy. Please copy manually.</p>";
        });
         });
-    // Copy and Past Section NOT TESTED: 
+  
 
 
   } catch (error) {
@@ -39,7 +39,7 @@ form.addEventListener("submit", async (e) => {
   }
 });
 
-//////API SECTION 
+
 
 async function transformText(text, persona) {
   var response = await fetch("https://w5-collab-app.olliecatt123.workers.dev/", {
@@ -61,7 +61,7 @@ async function transformText(text, persona) {
 
 
 
-// Shake Effect ///
+
 const button = document.getElementById("shakeBtn");
 const image = document.getElementById("myImage");
 
