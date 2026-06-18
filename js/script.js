@@ -20,7 +20,7 @@ form.addEventListener("submit", async (e) => {
     <p>${transformed}</p>
 
 
-    // Copy and Past Section NOT TESTED: 
+ 
         <button id="copy-btn">Copy to Clipboard</button>`;
         document.getElementById("copy-btn").addEventListener("click", () => { navigator.clipboard.writeText(transformed) .then(() => {
         document.getElementById("copy-btn").textContent = "Copied!";
