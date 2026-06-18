@@ -1,4 +1,4 @@
-# w5-app
+# The Parrot App
 A group based project between the 'Anarchists of the Apocalypse' - collaborating to create a simple app.
 
  Project name: Parrot 
