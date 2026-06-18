@@ -8,37 +8,38 @@
 </head>
 <body>
   <main>
-  <!-- image Container -->
+      <!-- image Container -->
     <section>
       <div class="parent">
         <div class="box">Container 1</div>
-          <img src="images/image (2).png" alt="Pirate Parrot" style="border-radius: 35px">
+          <img id="myImage" class="image" src="images/Parrot_nobg.png" alt="Parrot on transparent background">
+        <!-- Form Container -->
         <div class="box">Container 2</div>
-        <header>
-          <h1>Persona Text Transformer</h1>
-            <p>Type a sentence, pick a persona, and see it transformed.</p>
+        <header><!-- Header -->
+          <h1 class="text3d">Persona Text Transformer</h1>
+            <p style="text-align: center;">Type a sentence, pick a persona, and see it transformed.</p>
         </header>
-        <form id="transformer-form" class="transformer-form">
+        <form id="transformer-form" class="transformer-form"><!-- Form Class -->
           <label for="user-text">Your text</label>
             <textarea id="user-text" rows="3" placeholder="Type or paste a sentence..." required></textarea>
           <label for="persona-select">Transform into</label>
-            <select id="persona-select">
+            <select id="persona-select"><!-- Drop Down Menu -->
               <option value="pirate">Pirate</option>
               <option value="shakespearean">Shakespearean</option>
               <option value="corporate">Jordan Belfort</option>
               <option value="genz">Gen Z</option>
               <option value="sports">Liverpool fan</option>
             </select>
-            <button type="submit" id="transform-btn">Transform</button>
+            <button type="submit" id="small-btn">Transform</button><!-- Transform Button -->
+          <div id="result-panel" aria-live="polite">
+            <p>Your transformed text will appear here.</p>
         </form>
-      <div id="result-panel" aria-live="polite">
-        <p>Your transformed text will appear here.</p>
-      </div>
+          </div>
     </section>
   </main>
   <footer>
     © 2026 Macaw. All Rights Reserved.
   </footer>
-  <script src="js/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

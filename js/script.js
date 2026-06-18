@@ -1,4 +1,3 @@
-
 var form = document.getElementById("transformer-form");
 var resultPanel = document.getElementById("result-panel");
 
@@ -40,8 +39,6 @@ form.addEventListener("submit", async (e) => {
   }
 });
 
-
-
 //////API SECTION 
 
 async function transformText(text, persona) {
@@ -64,15 +61,6 @@ async function transformText(text, persona) {
   const data = await response.json();
   return data.choices[0].message.content; // ← different shape than Claude
 }
-
-
-
-
-
-
-
-
-
 
 // Shake Effect ///
 const button = document.getElementById("shakeBtn");
